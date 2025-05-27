@@ -9,19 +9,41 @@ import Loading from "@/components/Loading";
 
 const MyOrders = () => {
 
-    const { currency } = useAppContext();
+    const { currency, getToken, user  } = useAppContext();
 
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchOrders = async () => {
-        setOrders(orderDummyData)
-        setLoading(false);
+        try {
+            const token = await getToken()
+
+            const { data } = await axios.get('/api/order/list', {header:{Authorization: 'Bearer ${token'}})
+
+            if (data.success) {
+                setOrders(data.order.reverse())
+                setLoading(false)
+            } else {
+                toast.error(data.message)
+                
+            }
+
+            
+        } catch (error) {
+            toast.error(error.message);
+            
+            
+        }
+        
     }
 
     useEffect(() => {
-        fetchOrders();
-    }, []);
+        if (user) {
+            fetchOrders();
+        }
+
+        
+    }, [user]);
 
     return (
         <>
@@ -30,7 +52,7 @@ const MyOrders = () => {
                 <div className="space-y-5">
                     <h2 className="text-lg font-medium mt-6">My Orders</h2>
                     {loading ? <Loading /> : (<div className="max-w-5xl border-t border-gray-300 text-sm">
-                        {orders.map((order, index) => (
+                        {orders?.map((order, index) => (
                             <div key={index} className="flex flex-col md:flex-row gap-5 justify-between p-5 border-b border-gray-300">
                                 <div className="flex-1 flex gap-5 max-w-80">
                                     <Image

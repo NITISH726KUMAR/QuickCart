@@ -1,0 +1,24 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.15.1
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\nitis\QuickCart\.npmrc
+5 silly config load:file:C:\Users\nitis\.npmrc
+6 silly config load:file:C:\Users\nitis\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm run lint
+8 verbose argv "run" "lint" "--cache" "--fix"
+9 verbose logfile logs-max:10 dir:C:\Users\nitis\QuickCart\--fix\_logs\2025-05-25T19_06_54_624Z-
+10 verbose logfile C:\Users\nitis\QuickCart\--fix\_logs\2025-05-25T19_06_54_624Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/npm 184ms
+13 verbose cwd C:\Users\nitis\QuickCart
+14 verbose os Windows_NT 10.0.22631
+15 verbose node v22.15.1
+16 verbose npm  v10.9.2
+17 notice
+17 notice New [31mmajor[39m version of npm available! [31m10.9.2[39m -> [34m11.4.1[39m
+17 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.4.1[39m
+17 notice To update run: [4mnpm install -g npm@11.4.1[24m
+17 notice  { force: true, [Symbol(proc-log.meta)]: true }
+18 verbose exit 1
+19 verbose code 1

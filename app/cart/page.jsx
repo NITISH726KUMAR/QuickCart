@@ -40,7 +40,7 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {Object.keys(cartItems).map((itemId) => {
+                {Object.keys(cartItems)?.map((itemId) => {
                   const product = products.find(product => product._id === itemId);
 
                   if (!product || cartItems[itemId] <= 0) return null;
